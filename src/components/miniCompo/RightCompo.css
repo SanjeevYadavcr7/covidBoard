@@ -197,7 +197,7 @@ padding: 0;margin-top: 7%;}
 .head-text{margin: 4% 2%;}
 .status_helplineBox{width:100%;height:auto;
 display: flex;flex-direction:row;justify-content: space-around;}
-.status_helplineBox{position: absolute;margin-top:-80em;}
+.status_helplineBox{position: absolute;margin-top:-78em;}
 .status_helplineBox .head-text{display: none;}
 .numBox1, .numBox2, .numBox3{
   width: fit-content;
@@ -224,6 +224,6 @@ padding:1%;}
 .newsBox .news img{width:15%;padding:1%;margin: 0;}
 }
 
-@media only screen and (min-width:350px) and (max-width:370px) {.status_helplineBox{margin-top:-74em;}}
+@media only screen and (min-width:350px) and (max-width:370px) {.status_helplineBox{margin-top:-72em;}}
 @media only screen and (min-width:320px) and (max-width:340px) {.status_helplineBox{margin-top:-68em;}}
 
