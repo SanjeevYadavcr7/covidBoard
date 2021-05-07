@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import './Dashboard.css';
 import CovidApi from '../api/CovidApi';
-import banner from './images/banner3.jpg';
+import banner from './images/banner3.png';
 import searchIcon from './images/search.svg';
 import SearchCompo from './miniCompo/SearchCompo';
 import RightCompo from './miniCompo/StatusRightCompo';

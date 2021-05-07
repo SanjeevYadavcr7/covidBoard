@@ -10,7 +10,6 @@ import Status from './components/Status';
 import News from './components/News';
 import Support from './components/Support';
 import About from './components/About';
-import WhatToDo from './components/Whattodo';
 import Footer from './components/Footer';
 
 import home from './components/images/home.png';
@@ -72,7 +71,6 @@ class App extends Component{
                   <Route path="/news" component={News}></Route>
                   <Route path="/about" component={About}></Route>
                   <Route path="/support" component={Support}></Route>
-                  <Route path="/whattodo" component={WhatToDo}></Route>
                 </Switch>
             </div>
             <div className="footer_box">
