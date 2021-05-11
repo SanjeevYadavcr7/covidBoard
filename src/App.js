@@ -26,12 +26,14 @@ class App extends Component{
     data2:{},
     countryData:[],
     country:'',
+    countryList:'',
   }
 
   async componentDidMount(){
       const fetchCountryData = await CovidApi.fetchCountryData();
       const fetchedData2 = await CovidApi.fetchCovidData2(this.state.country);
-      this.setState({isFetching:false,countryData:fetchCountryData,data2:fetchedData2});
+      const countryList = await CovidApi.fetchCountriess();
+      this.setState({isFetching:false,countryList:countryList,countryData:fetchCountryData,data2:fetchedData2});
   }
 
   onButtonClick = async(item) => {
@@ -57,7 +59,7 @@ class App extends Component{
                   <Route path="/" exact>
                     {
                       (!this.state.isFetching) ?
-                        <Dashboard country={this.state.country} onButtonClick={this.onButtonClick} isFetching={this.state.isFetching} data2={this.state.data2} />
+                        <Dashboard country={this.state.country} countryList={this.state.countryList} onButtonClick={this.onButtonClick} isFetching={this.state.isFetching} data2={this.state.data2} />
                       : ''
                     }
                   </Route>

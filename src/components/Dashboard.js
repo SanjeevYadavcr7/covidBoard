@@ -10,16 +10,9 @@ import recover from './images/recovered.png';
 import total from './images/total3.png';
 
 class main extends Component{
-    state = {fetchedCountries:[]}
-    
-    async componentDidMount(){
-        const fetchCountry = await CovidApi.fetchCountriess();
-        this.setState({fetchedCountries:fetchCountry});
-    }
     render(){
-        // console.log(this.props)
         const gbl = '';
-        const {country, isFetching, data2} = this.props;
+        const {country, countryList, isFetching, data2} = this.props;
         const {cases,recovered,deaths,active,todayCases,todayDeaths,todayRecovered} = data2;
         return(
             <>
@@ -36,7 +29,7 @@ class main extends Component{
                                 <select className="selectBox" onChange={(e) => this.props.onButtonClick(e.target.value)}>
                                     <option value={gbl}>{(country) ? country : 'Global'}</option>
                                     <option value={gbl}>Global</option>
-                                    {this.state.fetchedCountries.map((country, i) => 
+                                    {countryList.map((country, i) => 
                                         <option key={i} value={country}>{country}</option>
                                     )}
                                 </select>
