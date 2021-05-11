@@ -534,6 +534,11 @@ letter-spacing:0.2em;}
 
 }
 
+@media only screen and (min-width:350px) and (max-width:370px) {
+    .box_m_1 .dates_news, .box_m_1 .dates{margin-left:65%;margin-top:-19%;}
+}
+
+
 @media only screen and (min-width:320px) and (max-width:340px) {
 .statusTable{width:98%;}   
 th, td{font-size: 0.7em;}
@@ -541,5 +546,4 @@ th, td{font-size: 0.7em;}
 .footers .footer_text{font-size:0.75em;letter-spacing:0em;}
 .footers .phantom{letter-spacing:0.15em;font-size:0.7em;}
 .symptomBox .iconsBox{min-width:87%;}
-
 }
