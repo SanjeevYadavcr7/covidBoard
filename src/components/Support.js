@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import './Dashboard.css';
 import CovidApi from '../api/CovidApi';
-import RightCompo from './miniCompo/RightCompo';
+import RightCompo from './miniCompo/RightCompos';
 import banner from './images/Vaccine_Banner.png';
 import { getMaxDate, getMinDate } from '../util';
 
@@ -141,7 +141,7 @@ function Support() {
                 </div>
             </div>
         </div>
-        <div className="box_r box_rm">
+        <div className="box_r">
             <RightCompo />
         </div>
     </>

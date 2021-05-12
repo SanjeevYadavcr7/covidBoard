@@ -610,22 +610,29 @@ margin-bottom:5%;margin-top: 4%;}
     justify-content: center;align-items: center;
 }
 .box_m_1 .form_support .form_div input{width:93%;margin:0;margin-bottom:4%;
-border-width: 1px;font-size: 0.9em;}
-.box_m_1 .form_support form button{width:70%;}
+border-width: 1px;font-size: 0.8em;}
+.box_m_1 .form_support form button{width:65%;font-size:0.7em;}
 .box_m_1 .form_support .avail_center{width:100%;
 display: flex;flex-direction: column;
 align-items: center;justify-content: center;}
 
-.box_m_1 .form_support .avail_center .head-text2{display: flex;
-    font-size:0.9em;letter-spacing:0.01em;
-    flex-direction: column-reverse;align-items: center;justify-content: center;}
+.box_m_1 .form_support .avail_center .head-text2{
+    font-size:0.7em;letter-spacing:0.02em;
+    display: block;
+    text-align: center;
+    padding: 1em 1.5em;
+    text-transform: uppercase;}
 .box_m_1 .form_support .avail_center .head-text2 span{margin: 0;
-    display:block;margin-bottom:5%;text-transform: capitalize;}
+    display:block;margin-bottom:5%;text-transform: capitalize;
+    display: none;}
 
-.form_support .avail_center .statusTable{width:98%;margin-top:2%;}
+.form_support .avail_center .statusTable{width:98%;margin-top:3%;
+margin-bottom: 4%;
+}
 .form_support .avail_center .statusTable .tableBox thead th{
     font-size:0.7em;font-weight:400;}
 .form_support .avail_center .statusTable tr td{font-size:0.7em;}
+.box_rm{display: none;}
 
 }
 
