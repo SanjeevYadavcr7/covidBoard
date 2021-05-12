@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {BrowserRouter as Router,Switch,Route,NavLink} from "react-router-dom";
+import {BrowserRouter as Router,Switch,Route,NavLink, Link} from "react-router-dom";
 import CovidApi from './api/CovidApi';
 
 import './App.css';
@@ -16,7 +16,7 @@ import home from './components/images/home.png';
 import news from './components/images/news.png';
 import status from './components/images/status.png';
 import about from './components/images/about.png';
-import support from './components/images/support.png';
+import support from './components/images/injection.png';
 import logoImg from './components/images/healthcare.png';
 
 class App extends Component{
@@ -45,13 +45,15 @@ class App extends Component{
       <Router>
             <div className="box">
                 <div className="box_l">
-                    <p className="logo"><img src={logoImg} alt="logoImg" />Covid<span className="digit">19</span><span className="board">Board</span></p>
+                    <Link to="/" className="logoLink">
+                      <p className="logo"><img src={logoImg} alt="logoImg" />Covid<span className="digit">19</span><span className="board">Board</span></p>
+                    </Link>
                     <div className="navBar">
                         <NavLink exact to="/" activeclassname="active abc"><img src={home} alt="home_logo" /><span>Home</span></NavLink>
                         <NavLink to="/status" activeclassname="bctive"><img src={status} alt="home_logo" /><span>Status</span></NavLink>
                         <NavLink to="/news" activeclassname="active"><img src={news} alt="news"/><span className="ee">News</span></NavLink>
-                        <NavLink to="/support" activeclassname="active"><img src={support} alt="support"/><span className="dd">Support</span></NavLink>
                         <NavLink to="/about" activeclassname="active"><img src={about} alt="about"/><span className="cc">Symptoms</span></NavLink>
+                        <NavLink to="/support" activeclassname="active"><img src={support} alt="support"/><span className="dd">Vaccination</span></NavLink>
                     </div>
                 </div>
 

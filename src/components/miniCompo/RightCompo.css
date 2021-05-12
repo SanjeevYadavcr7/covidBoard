@@ -225,5 +225,7 @@ padding:1%;}
 }
 
 @media only screen and (min-width:350px) and (max-width:370px) {.status_helplineBox{margin-top:-72em;}}
-@media only screen and (min-width:320px) and (max-width:340px) {.status_helplineBox{margin-top:-68em;}}
+@media only screen and (min-width:320px) and (max-width:340px) {
+  .status_helplineBox{margin-top:-68em;}
+}
 

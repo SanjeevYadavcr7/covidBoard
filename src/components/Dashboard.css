@@ -31,7 +31,7 @@ a{text-decoration: none;display: block;
 .bb{display: flex;align-items: center;}
 .navBar a img{width: 14%;margin-right:1.5em;margin-left: 2em;}
 .active{font-weight:500;border-left:5px solid #333;}
-
+.logoLink{border: none;font-weight: normal;}
 
 
 /* ////////////////////////// -->Dashboard Component<-- ////////////////////////// */
@@ -39,12 +39,13 @@ a{text-decoration: none;display: block;
 .box_m_1{width:98%;height: 97%;background-color:rgba(246, 246, 246, 0.7);
     border:1px solid transparent;border-radius: 20px;
     margin: 1% auto;}
-.box_m_1 .dates{margin-top:4%;margin-left: 80%;color:#777;
+.box_m_1 .dates{margin-top:4%;margin-left: 78%;color:#777;
     font-size: 0.7em;
     font-weight:600;letter-spacing: 0.01em;font-family: 'Lato',sans-serif;}
 .box_m_1 .banner{width: 90%;height:20%;background-color:transparent;
     border:1px solid transparent;margin: 0% auto;}
 .banner img{width: 95%;margin-left:2.5%;}
+
 .box_m_info{width: 85%;border:1px solid transparent;height:auto;
     margin: 0% auto;
     display: flex;flex-direction: column;}
@@ -160,7 +161,6 @@ tbody{
 .statusTable{ overflow: auto; height: 100%; }
 .statusTable th{ position: sticky; top: 0; }
 tr:hover{cursor: pointer;background-color: #f0f0f0;}
-
 
 
 
@@ -329,6 +329,69 @@ border:1px solid rgb(224, 224, 224);
 letter-spacing:0.2em;}
 
 
+/* Support Page  */
+
+.box_m_1 .banner_support{width: 90%;height:20%;margin: 0% auto;}
+.banner_support img{width: 96%;margin-left:2%;border-radius:15px;}
+.box_m_1 .form_support{width:88%;height:62%;border:1px solid rgb(240, 237, 237);
+    box-shadow: 0px 10px 10px 0px rgba(226, 226, 226, 0.301);
+    margin:4% auto;background-color:#fff;border-radius:10px;}
+.form_support .head-text,.form_support .head-text2{font-size: 1em;margin:3% 4%;
+    font-family:'Roboto',sans-serif;font-weight:400;color:#444;}
+.form_support .head-text2{margin:-1% 4.5%;margin-top: 5%;}
+.form_support .head-text2 span{float: right;margin-right:1.3%;}
+.form_support .head-text2 span .link{color: rgb(117, 69, 248);
+    font-weight:500;display: inline;padding:0;margin:0;}
+.form_support form{width: 95%;height: auto;margin:0% auto;
+    border:1px solid transparent;
+display: flex;flex-direction: column;justify-content: center;
+align-items: center;}
+.form_support .form_div{width: 100%;height: auto;margin:0% auto;border:1px solid transparent;
+display: flex;justify-content: space-around;}
+.form_support .form_div input{width:28%;height:40px;
+    border:2px solid rgb(219, 217, 217);
+border-radius: 3px;padding-left:2%;}
+.form_support .form_div input::placeholder{font-family: 'Roboto',sans-serif;color:#999;}
+.form_support .form_div input:focus{outline: none;border:2px solid #888;}
+.form_support form button{width:29%;height: 40px;margin-top:3%;border-radius:3px;
+background-color:rgba(8, 214, 94, 0.82);border:1px solid rgba(8, 214, 94, 0.82);
+color: #fff;text-transform: uppercase;font-weight: bold;letter-spacing:0.1em;}
+.form_support .form_div input{
+    font-family: 'Roboto',sans-serif;/* letter-spacing: 0.1em; */font-size:0.9em;
+}
+.form_support .form_div input[type="date"]{
+    color: #999;
+    text-transform: lowercase;
+}
+   
+::-webkit-calendar-picker-indicator {
+  color: rgba(141, 141, 141, 0);
+  opacity: 1;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg fill="%23000" fill-opacity=".54" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/%3E%3Cpath d="M0 0h24v24H0z" fill="none"/%3E%3C/svg%3E');
+  width: 25px;
+  height: 30px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+button:hover{cursor: pointer;}
+.form_support .avail_center{width: 100%;height: 55%;}
+.form_support .avail_center .statusTable{width: 91%;height: auto;border-radius:5px;}
+.form_support .avail_center .statusTable .tableBox thead th{font-size:1em;font-weight:500;}
+.form_support .avail_center .statusTable tr td:first-child{font-size:0.8em;width:30%;text-transform: uppercase;}
+.form_support .avail_center .statusTable tr td{font-size:0.9em;}
+.form_support .avail_center .statusTable tr td{text-transform:capitalize;}
+.form_support .avail_center .statusTable tr td::first-letter{text-transform:uppercase;}
+
+
+
+
 /* ////////////////// -->for small laptops screens<-- ////////////////// */
 @media only screen and (min-width: 960px) and (max-width: 1300px){
 .box_m_1{border: 1px solid transparent;display: flex;
@@ -383,6 +446,7 @@ justify-content: center;}
 
 @media only screen and (max-width:600px) {
 body{width: 100%;height: auto;}
+.logoLink{border: none;font-weight: normal;}
 .box{width: 100%;height: 100%;display: flex;flex-direction: column;}
 .box .box_l{border:none;width: 100%;display: flex;flex-direction:column;}
 .box_l .logo{font-size:1em;font-weight:normal;
@@ -397,6 +461,7 @@ body{width: 100%;height: auto;}
 a{padding: 0;margin: 0;border-left:1px solid rgb(235, 235, 235);}
 .navBar a span{display: none;}
 .navBar a img{width:33%;margin:0% auto;}
+/* .navBar a .support{width:100%;} */
 .active{font-weight: 0;border:none;border-bottom:3px solid rgb(136, 135, 135);}
 
 /* Dashboard Page  */
@@ -535,14 +600,14 @@ letter-spacing:0.2em;}
 }
 
 @media only screen and (min-width:350px) and (max-width:370px) {
-    .box_m_1 .dates_news, .box_m_1 .dates{margin-left:65%;margin-top:-19%;}
+    .box_m_1 .dates_news, .box_m_1 .dates{margin-left:60%;margin-top:-20%;}
 }
 
 
 @media only screen and (min-width:320px) and (max-width:340px) {
 .statusTable{width:98%;}   
 th, td{font-size: 0.7em;}
-.box_m_1 .dates_news, .box_m_1 .dates{margin-top:-21%;margin-left: 67%;}
+.box_m_1 .dates_news, .box_m_1 .dates{margin-top:-21%;margin-left: 56%;}
 .footers .footer_text{font-size:0.75em;letter-spacing:0em;}
 .footers .phantom{letter-spacing:0.15em;font-size:0.7em;}
 .symptomBox .iconsBox{min-width:87%;}
