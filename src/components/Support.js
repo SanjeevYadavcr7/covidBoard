@@ -65,7 +65,7 @@ function Support() {
         <div className="box_m">
             <div className="box_m_1">
             <p className="dates">{CovidApi.getTodayDate()}</p>
-                <div className=" banner_support">
+                <div className="banner_support">
                     <img src={banner} alt="banner_image" />
                 </div>
                 <div className="form_support">
@@ -141,7 +141,7 @@ function Support() {
                 </div>
             </div>
         </div>
-        <div className="box_r">
+        <div className="box_r box_rm">
             <RightCompo />
         </div>
     </>
