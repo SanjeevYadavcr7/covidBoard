@@ -25,11 +25,11 @@ function Support() {
             centers.map((center) => {
                 console.log("Center = ");
                 console.log(center);
-                let sessions = center.sessions;
-                validSlots = sessions.filter((sessionArray) => sessionArray.min_age_limit <= age && sessionArray.available_capacity > 0);
-                if(validSlots.length > 0){
+                // let sessions = center.sessions;
+                // validSlots = sessions.filter((sessionArray) => sessionArray.min_age_limit <= age && sessionArray.available_capacity > 0);
+                // if(validSlots.length > 0){
                     setCenters((oldArray) => [...oldArray,center]);
-                }
+                // }
             })
         })
         .catch((error) => { console.log(error)});

@@ -384,10 +384,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 button:hover{cursor: pointer;}
 .form_support .avail_center{width: 100%;height: 55%;}
-.form_support .avail_center .statusTable{width: 91%;height: auto;border-radius:5px;}
+.form_support .avail_center .statusTable{width: 91%;height:70%;border-radius:5px;}
 .form_support .avail_center .statusTable .tableBox thead th{font-size:1em;font-weight:500;}
-.form_support .avail_center .statusTable tr td:first-child{font-size:0.8em;width:30%;text-transform: uppercase;}
-.form_support .avail_center .statusTable tr td{font-size:0.9em;}
+.form_support .avail_center .statusTable tr td:first-child{font-size:0.75em;width:30%;text-transform: uppercase;}
+.form_support .avail_center .statusTable tr td{font-size:0.8em;}
 .form_support .avail_center .statusTable tr td{text-transform:capitalize;}
 .form_support .avail_center .statusTable tr td::first-letter{text-transform:uppercase;}
 
