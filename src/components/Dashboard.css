@@ -397,7 +397,7 @@ button:hover{cursor: pointer;}
 /* ////////////////// -->for small laptops screens<-- ////////////////// */
 @media only screen and (min-width: 960px) and (max-width: 1300px){
 
-.navBar a img{margin-right:1em;margin-left:1em;}
+.navBar a img{margin-right:1em;margin-left:1em;border:1px solid;}
 .navBar .active img{margin-left:0.8em;}
 
 .box_m_1{border: 1px solid transparent;display: flex;
