@@ -179,15 +179,18 @@ padding: 0;margin-top: 7%;}
 
 .news img{width:21%;border-radius: 7px;}
 
+/* .snewsBox .news img{border:1px solid;} */
+
 
 @media only screen and (min-width: 960px) and (max-width: 1300px){
 .helplineBox{overflow: hidden;}
 .numBox_icon{width: 15%;height: 5%;padding: 0;}
 .numBox_num p{font-size: 0.8em;}
 .newsBox .news p{font-size: 0.7em;}
+.newsBoxs .newsCountry p{font-size: 0.8em;}
 .numBox1, .numBox2, .numBox3{width: 85%;}
 .p11{font-size: 0.9em;}.p01{font-size:1em;}
-.p001{font-size: 0.9em;}.p12{font-size: 1.4em;}
+.p001{margin-left:-2%;font-size: 0.8em;}.p12{font-size: 1.2em;}
 }
 
 @media only screen and (max-width:600px) {

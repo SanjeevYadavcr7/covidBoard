@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import './Dashboard.css';
 import CovidApi from '../api/CovidApi';
 import RightCompo from './miniCompo/RightCompos';
-import banner from './images/Vaccine_Banner.png';
+import banner from './images/banner2.png';
 import { getMaxDate, getMinDate } from '../util';
 
 function Support() {
@@ -13,6 +13,7 @@ function Support() {
     const [centers, setCenters] = useState([]);
     const [loadData, setLoadData] = useState(false);
     const [dtype, setDtype] = useState('text');
+    const [isFetching, setIsfetching] = useState(true);
 
     const fetchUser = async(api) => {
         let response = await fetch(api)
@@ -43,6 +44,7 @@ function Support() {
                 let res = await fetchUser(api);
                 if(res.success){
                     setLoadData(false);
+                    setIsfetching(false);
                 }
             } 
         }
@@ -80,8 +82,8 @@ function Support() {
                         <button> Check Available Slot</button>
                     </form>
                     <div className="avail_center">
-                        <p className="head-text2">Total available slot(s) : {(loadData || centers.length ) ? centers.length : ''}
-                        <span>visit <Link to="\" className="link">covin.gov.in</Link> to book your slot</span>  
+                        <p className="head-text2">Total available slot(s) : {(isFetching) ? '' : centers.length}
+                        <span>visit <Link to="/cowin" target="_blank" className="link">covin.gov.in</Link> to book your slot</span>  
                         </p>
                         <div className="statusTable">
                             <table className="tableBox">

@@ -75,6 +75,7 @@ class App extends Component{
                   <Route path="/news" component={News}></Route>
                   <Route path="/about" component={About}></Route>
                   <Route path="/support" component={Support}></Route>
+                  <Route path="/cowin" component={() => {window.location.href='https://www.cowin.gov.in/home';return null}}></Route>
                 </Switch>
             </div>
             <div className="footer_box">

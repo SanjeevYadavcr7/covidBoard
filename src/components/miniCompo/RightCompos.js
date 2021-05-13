@@ -1,10 +1,10 @@
 import React from 'react'
 import './RightCompo.css';
 import {Link} from 'react-router-dom';
-import china from '../images/images3.jpg';
-import vaccine from '../images/download.jfif';
-import hands from '../images/court.jfif';
-import crowd from '../images/images2.jpg';
+import china from '../images/bharat.jpg';
+import vaccine from '../images/covidSheild.jpg';
+import hands from '../images/aarogya.jpg';
+import crowd from '../images/sputnik.jpg';
 
 function RightCompo() {
     return (
@@ -36,28 +36,30 @@ function RightCompo() {
                     </div>
                 </div>
             </div>
-            <div className="newsBox no_display">
+            <div className="newsBox snewsBox no_display">
                 <p className="head-text">Latest News</p>
                 <Link className="newsBox_link" to="/news">see more</Link>
                 <div className="news">
                     <img src={hands} alt="hands"/>
                     <p>
-                        Covid care center in 5-star hotel for Delhi HC judges 
+                        Use aarogya setu app for covid related official news  
                     </p>
                 </div>
                 <div className="news">
                     <img src={vaccine} alt="vaccine"/>
-                    <p>Rich Indians flee by private jet as covid-19 infections spiral</p>
+                    <p>
+                        Doctors advices 12 weeks gap between two covidsheild doses
+                    </p>
                 </div>
                 <div className="news">
                     <img src={china} alt="china"/>
                     <p>
-                    China ready to provide india with supply assistance 
+                        DCGI approves clinical trials of covaxin on 2-18 years old
                     </p> 
                 </div>
                 <div className="news">
                     <img src={crowd} alt="news"/>
-                    <p>Argentina sinks further into pandemic</p>
+                    <p>Sputnik requires only 20 days gap between two doses</p>
                 </div>
             </div>
         </div>

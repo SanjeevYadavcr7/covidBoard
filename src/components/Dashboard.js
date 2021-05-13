@@ -3,7 +3,7 @@ import CovidApi from '../api/CovidApi';
 import CovidGraph from './Chart/Covidgraph';
 import './Dashboard.css'
 import RightCompo from './miniCompo/RightCompo';
-import banner from './images/Group11.png';
+import banner from './images/banner1.png';
 import activep from './images/active.png';
 import deceased from './images/deceased.png';
 import recover from './images/recovered.png';

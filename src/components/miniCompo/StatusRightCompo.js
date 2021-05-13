@@ -69,7 +69,7 @@ function StatusRightCompo(props) {
                     (arrayData.length) ? 
                     arrayData.map((rowData, key) => {
                         return(
-                            <div className="news" key={rowData.country}>
+                            <div className="news newsCountry" key={rowData.country}>
                                     <span className={`dot${++i}`}><span className={`dot${i}${j}`}></span></span>
                                 <p><strong>{rowData.country}</strong> - {numeral(rowData.cases).format('0,0')}</p>
                             </div>
