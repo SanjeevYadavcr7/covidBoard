@@ -14,6 +14,7 @@ function Support() {
     const [loadData, setLoadData] = useState(false);
     const [dtype, setDtype] = useState('text');
     const [isFetching, setIsfetching] = useState(true);
+    const [slots, setSlots] = useState(0);
 
     const fetchUser = async(api) => {
         let response = await fetch(api)
@@ -27,8 +28,12 @@ function Support() {
                 console.log(center);
                 let sessions = center.sessions;
                 validSlots = sessions.filter((sessionArray) => sessionArray.min_age_limit <= age);
+                let availableSlots = sessions.filter((sessionArray) => sessionArray.available_capacity > 0 );
                 if(validSlots.length > 0){
                     setCenters((oldArray) => [...oldArray,center]);
+                    if(availableSlots.length > 0){
+                        setSlots((prev) => prev+1);
+                    }  
                 }
             })
         })
@@ -82,7 +87,7 @@ function Support() {
                         <button> Check Available Slot</button>
                     </form>
                     <div className="avail_center">
-                        <p className="head-text2">Total available slot(s) : {(isFetching) ? '' : centers.length}
+                        <p className="head-text2">Total available slot(s) : {(isFetching && !slots) ? '' : slots}
                         <span>visit <Link to="/cowin" target="_blank" className="link">covin.gov.in</Link> to book your slot</span>  
                         </p>
                         <div className="statusTable">
