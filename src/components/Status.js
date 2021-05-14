@@ -14,7 +14,7 @@ function Status(props) {
         <>
         <div className="box_m"> 
                     <div className="box_m_1">
-                        <p className="dates">{CovidApi.getTodayDate()}</p>
+                        <p className="dates">{CovidApi.getTodayDate()}<span>day</span></p>
                         <div className="banner banner_status">
                             <img src={banner} alt="banner_image" />
                         </div>

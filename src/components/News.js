@@ -17,7 +17,7 @@ function News() {
         <div className="box_m">
             <div className="box_m_1">
                 <p className="newspageTitle">Top Covid-19 News</p>
-                <p className="dates_news">{CovidApi.getTodayDate()}</p>
+                <p className="dates_news">{CovidApi.getTodayDate()}<span>day</span></p>
                 <div className="newsBox">
                     <div className="newsBox1">
                         <div className="newsBox11">

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CovidApi from '../api/CovidApi';
+import { covertToLakhs } from '../util';
 import CovidGraph from './Chart/Covidgraph';
 import './Dashboard.css'
 import RightCompo from './miniCompo/RightCompo';
@@ -18,7 +19,11 @@ class main extends Component{
             <>
                 <div className="box_m"> 
                     <div className="box_m_1">
-                        <p className="dates">{CovidApi.getTodayDate()}</p>
+                        <p className="dates">
+                            {/* 14 May 2021, Wednes */}
+                            {CovidApi.getTodayDate()}
+                            <span>day</span>
+                        </p>
                         <div className="banner">
                             <img src={banner} alt="banner_image" />
                         </div>
@@ -43,7 +48,7 @@ class main extends Component{
                                         <p className="small_title">CONFIRMED</p>
                                     </div>
                                     <div className="box_m_info_4_r">
-                                        <p className="count">{ (!isFetching) ? cases : ''}</p>
+                                        <p className="count">{ (!isFetching) ? covertToLakhs(cases) : ''}</p>
                                         <p className="increment_count"><span>+ </span>
                                             {parseInt(todayCases/1000)}.{parseInt((todayCases%1000)/100)}k
                                         </p>
@@ -59,7 +64,7 @@ class main extends Component{
                                     <p className="small_title">ACTIVE</p>
                                 </div>
                                 <div className="box_m_info_1_r">
-                                    <p className="count">{ (!isFetching) ? active : ''}</p>
+                                    <p className="count">{ (!isFetching) ? covertToLakhs(active) : ''}</p>
                                     <p className="increment_count"><span>+ </span>
                                         {parseInt(todayCases/1000)}.{parseInt((todayCases%1000)/100)}k
                                     </p>
@@ -75,7 +80,7 @@ class main extends Component{
                                     <p className="small_title">RECOVERED</p>
                                 </div>
                                 <div className="box_m_info_2_r">
-                                    <p className="count">{ (!isFetching) ? recovered : ''}</p>
+                                    <p className="count">{ (!isFetching) ? covertToLakhs(recovered) : ''}</p>
                                     <p className="increment_count"><span>+ </span>
                                     {parseInt(todayRecovered/1000)}.{parseInt((todayRecovered%1000)/100)}k</p>
                                 </div>
@@ -86,7 +91,7 @@ class main extends Component{
                                     <p className="small_title">DECEASED</p>
                                 </div>
                                 <div className="box_m_info_3_r">
-                                    <p className="count">{(!isFetching) ? deaths : ''}</p>
+                                    <p className="count">{(!isFetching) ? covertToLakhs(deaths) : ''}</p>
                                     <p className="increment_count"><span>+ </span>
                                     {parseInt(todayDeaths/1000)}.{parseInt((todayDeaths%1000)/100)}k</p>
                                 </div>

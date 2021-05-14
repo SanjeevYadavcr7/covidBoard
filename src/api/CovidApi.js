@@ -50,7 +50,7 @@ class CovidApi extends React.Component{
 
       static getTodayDate(){
         let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July','Aug','Sep','Oct','Nov','Dec'];
-        let weekday = ['Sunday', 'Monday', 'Tuesday','Wednesday', 'Thursday', 'Friday', 'Saturday']
+        let weekday = ['Sun', 'Mon', 'Tue','Wed', 'Thu', 'Fri', 'Sat']
         var today = new Date();
         var date = today.getDate()+" "+month[today.getMonth()]+" "+today.getFullYear()+", "+weekday[today.getDay()];
         return date;

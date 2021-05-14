@@ -59,19 +59,20 @@ function Support() {
     function formSubmit(e){
         e.preventDefault();
         setCenters([]);
+        setSlots(0);
         setLoadData(true);
     }
-    // onFocus : function(){
-    //     setDtype('date');
-    // }
-    function OnFocus(){
-        setDtype('date');
-    }
+    
+    function changeToDate(){ setDtype('date');} 
+
     return (
     <>
         <div className="box_m">
             <div className="box_m_1">
-            <p className="dates">{CovidApi.getTodayDate()}</p>
+            <p className="dates">
+                {CovidApi.getTodayDate()}
+                <span>day</span>
+                </p>
                 <div className="banner_support">
                     <img src={banner} alt="banner_image" />
                 </div>
@@ -81,13 +82,13 @@ function Support() {
                         <div className="form_div">
                             <input type="number" placeholder="Enter Area Pincode" onChange={(e) => setPin(e.currentTarget.value)}/>
                             <input type="number" placeholder="Enter age" onChange={(e) => setAge(e.currentTarget.value)}/>
-                            {/* <input type="date" min={getMinDate()} onChange={(e) => setDate(e.currentTarget.value)}/> */}
-                            <input type={dtype} placeholder="Click to choose Date" onClick={OnFocus} onChange={(e) => setDate(e.currentTarget.value)}/>
+                            <input type="date" min={getMinDate()} onChange={(e) => setDate(e.currentTarget.value)}/>
+                            {/* <input type={dtype} placeholder="Click to choose Date" onFocus={changeToDate} onClick={changeToDate} onChange={(e) => setDate(e.currentTarget.value)}/> */}
                         </div>
                         <button> Check Available Slot</button>
                     </form>
                     <div className="avail_center">
-                        <p className="head-text2">Total available slot(s) : {(isFetching && !slots) ? '' : slots}
+                        <p className="head-text2">Total available Center(s) : {(isFetching && !slots) ? '' : slots}
                         <span>visit <Link to="/cowin" target="_blank" className="link">covin.gov.in</Link> to book your slot</span>  
                         </p>
                         <div className="statusTable">
@@ -111,7 +112,7 @@ function Support() {
                                         <tr key={center.name}>
                                             <td>{center.name}</td>
                                             <td>{center.district_name}, {center.state_name}</td>
-                                            <td>{center.sessions[0].available_capacity}</td>
+                                            <td>{(center.sessions[0].available_capacity == 0) ? 'Booked' : center.sessions[0].available_capacity}</td>
                                             <td>{center.sessions[0].vaccine}</td>
                                             {/* {
                                                 sessions.map((centerSession, centerIndex) => {

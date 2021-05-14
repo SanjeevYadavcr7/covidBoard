@@ -1,6 +1,6 @@
 import React,{useEffect, useCallback, useState} from 'react';
 import numeral from 'numeral';
-import {sortData} from '../../util';
+import {sortData, covertToLakhs} from '../../util';
 import './RightCompo.css';
 
 function StatusRightCompo(props) {
@@ -41,7 +41,7 @@ function StatusRightCompo(props) {
                         <span className="p001"> +
                             {(!isFetching) ? x : ''}k
                         </span><br/>
-                        <span className="p12">{ (!isFetching) ? numeral(active).format('0,0') : ''}</span>
+                        <span className="p12">{ (!isFetching) ? covertToLakhs(active) : ''}</span>
                     </p>
                 </div>
                 <div className="numBox2">
@@ -50,7 +50,7 @@ function StatusRightCompo(props) {
                         <span className="p001 greenClass"> +
                             {(!isFetching) ? y : ''}k
                         </span><br/>
-                        <span className="p12 greenClass">{ (!isFetching) ? numeral(recovered).format('0,0') : ''}</span>
+                        <span className="p12 greenClass">{ (!isFetching) ? covertToLakhs(recovered) : ''}</span>
                     </p>
                 </div>
                 <div className="numBox3">
@@ -59,7 +59,7 @@ function StatusRightCompo(props) {
                         <span className="p001 redClass"> +
                             {(!isFetching) ? z : ''}k
                         </span><br/>
-                        <span className="p12 redClass">{(!isFetching) ? numeral(deaths).format('0,0') : ''}</span>
+                        <span className="p12 redClass">{(!isFetching) ? covertToLakhs(deaths) : ''}</span>
                     </p>
                 </div>
             </div>
@@ -71,7 +71,7 @@ function StatusRightCompo(props) {
                         return(
                             <div className="news newsCountry" key={rowData.country}>
                                     <span className={`dot${++i}`}><span className={`dot${i}${j}`}></span></span>
-                                <p><strong>{rowData.country}</strong> - {numeral(rowData.cases).format('0,0')}</p>
+                                <p><strong>{rowData.country}</strong> - {covertToLakhs(rowData.cases)}</p>
                             </div>
                         )
                     }) : ''

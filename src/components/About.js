@@ -31,29 +31,29 @@ function About() {
         <>
         <div className="box_m">
             <div className="box_m_1">
-                <p className="dates">{CovidApi.getTodayDate()}</p>
+                <p className="dates">{CovidApi.getTodayDate()}<span>day</span></p>
                 <div className="banner about_banner">
                     <img src={banner} alt="banner_image" />
                 </div>
                 <div className="symptomBox">
                     <div className="qBigBox">
                         <div className="qBox qBox1">
-                            <p className="que" id="que1" onClick={doColor}>Do you have fever ?</p>
+                            <p className="que" id="que1" onClick={doColor}>I am having fever</p>
                         </div>
                         <div className="qBox">
-                            <p className="que" id="que2" onClick={doColor}>Do you have any kind of congestion or running nose ?</p>
+                            <p className="que" id="que2" onClick={doColor}>I am suffering from congestion and running nose</p>
                         </div>
                         <div className="qBox">
-                            <p className="que" id="que3" onClick={doColor}>Are you feeling difficulty in breathing ?</p>
+                            <p className="que" id="que3" onClick={doColor}>I am feeling difficulty in breathing </p>
                         </div>
                         <div className="qBox">
-                        <p className="que" id="que4" onClick={doColor}>Are you suffering from any kind of dry cough ?</p>                
+                        <p className="que" id="que4" onClick={doColor}>I am suffering from dry cough</p>                
                         </div>
                         <div className="qBox">
-                        <p className="que" id="que5" onClick={doColor}>Are you feeling body aches, fatigue or pressure ?</p>                
+                        <p className="que" id="que5" onClick={doColor}>I am feeling body aches, fatigue and pressure</p>                
                         </div>
                         <div className="qBox qBox6">
-                        <p className="que" id="que6" onClick={doColor}>Are you feeling regular headaches ?</p>               
+                        <p className="que" id="que6" onClick={doColor}>I am feeling regular headaches</p>               
                         </div>
                     </div>
                     <div className="iconsBox">
