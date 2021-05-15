@@ -4,9 +4,7 @@ import './Dashboard.css';
 import CovidApi from '../api/CovidApi';
 import RightCompo from './miniCompo/RightCompos';
 import banner from './images/banner2.png';
-// import dateIcon from './images/calendar.svg';
 import { getMinDate } from '../util';
-import DatePicker from "react-datepicker";
 
 function Support() {
     const [pin, setPin] = useState('');
@@ -14,10 +12,8 @@ function Support() {
     const [date, setDate] = useState('');
     const [centers, setCenters] = useState([]);
     const [loadData, setLoadData] = useState(false);
-    // const [dtype, setDtype] = useState('text');
     const [isFetching, setIsfetching] = useState(true);
     const [slots, setSlots] = useState(0);
-    const [startDate, setStartDate] = useState(new Date());
 
     const fetchUser = async(api) => {
         let response = await fetch(api)
@@ -65,8 +61,6 @@ function Support() {
         setSlots(0);
         setLoadData(true);
     }
-
-    // function changeToDate(){ setDtype('date');} 
 
     return (
     <>

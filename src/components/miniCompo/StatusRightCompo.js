@@ -1,5 +1,4 @@
 import React,{useEffect, useCallback, useState} from 'react';
-import numeral from 'numeral';
 import {sortData, covertToLakhs} from '../../util';
 import './RightCompo.css';
 
