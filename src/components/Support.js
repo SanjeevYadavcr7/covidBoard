@@ -4,7 +4,9 @@ import './Dashboard.css';
 import CovidApi from '../api/CovidApi';
 import RightCompo from './miniCompo/RightCompos';
 import banner from './images/banner2.png';
-import { getMaxDate, getMinDate } from '../util';
+// import dateIcon from './images/calendar.svg';
+import { getMinDate } from '../util';
+import DatePicker from "react-datepicker";
 
 function Support() {
     const [pin, setPin] = useState('');
@@ -12,9 +14,10 @@ function Support() {
     const [date, setDate] = useState('');
     const [centers, setCenters] = useState([]);
     const [loadData, setLoadData] = useState(false);
-    const [dtype, setDtype] = useState('text');
+    // const [dtype, setDtype] = useState('text');
     const [isFetching, setIsfetching] = useState(true);
     const [slots, setSlots] = useState(0);
+    const [startDate, setStartDate] = useState(new Date());
 
     const fetchUser = async(api) => {
         let response = await fetch(api)
@@ -62,8 +65,8 @@ function Support() {
         setSlots(0);
         setLoadData(true);
     }
-    
-    function changeToDate(){ setDtype('date');} 
+
+    // function changeToDate(){ setDtype('date');} 
 
     return (
     <>
@@ -80,15 +83,14 @@ function Support() {
                     <p className="head-text">Check Your Nearest Center</p>
                     <form onSubmit={formSubmit}>
                         <div className="form_div">
-                            <input type="number" placeholder="Enter Area Pincode" onChange={(e) => setPin(e.currentTarget.value)}/>
-                            <input type="number" placeholder="Enter age" onChange={(e) => setAge(e.currentTarget.value)}/>
-                            <input type="date" min={getMinDate()} onChange={(e) => setDate(e.currentTarget.value)}/>
-                            {/* <input type={dtype} placeholder="Click to choose Date" onFocus={changeToDate} onClick={changeToDate} onChange={(e) => setDate(e.currentTarget.value)}/> */}
+                            <input type="tel" placeholder="Enter Area Pincode" onChange={(e) => setPin(e.currentTarget.value)}/>
+                            <input type="tel" placeholder="Enter age" onChange={(e) => setAge(e.currentTarget.value)}/>
+                            <input type="date" id="date" min={getMinDate()} onChange={(e) => setDate(e.currentTarget.value)}/>
                         </div>
                         <button> Check Available Slot</button>
                     </form>
                     <div className="avail_center">
-                        <p className="head-text2">Total available Center(s) : {(isFetching && !slots) ? '' : slots}
+                        <p className="head-text2">Total Available Center(s) : {(isFetching && !slots) ? '' : slots}
                         <span>visit <Link to="/cowin" target="_blank" className="link">covin.gov.in</Link> to book your slot</span>  
                         </p>
                         <div className="statusTable">
@@ -107,12 +109,12 @@ function Support() {
                                     (centers.length) ?
                                     centers.map((center, index) => {
                                         console.log("Center Length[] = "+centers.length)
-                                        let sessions = center.sessions;
+                                        // let sessions = center.sessions;
                                         return(
                                         <tr key={center.name}>
                                             <td>{center.name}</td>
                                             <td>{center.district_name}, {center.state_name}</td>
-                                            <td>{(center.sessions[0].available_capacity == 0) ? 'Booked' : center.sessions[0].available_capacity}</td>
+                                            <td>{(center.sessions[0].available_capacity === 0) ? 'Booked' : center.sessions[0].available_capacity}</td>
                                             <td>{center.sessions[0].vaccine}</td>
                                             {/* {
                                                 sessions.map((centerSession, centerIndex) => {
