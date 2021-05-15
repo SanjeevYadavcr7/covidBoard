@@ -356,7 +356,6 @@ background-color: white;}
 
 input[type="date"]
 {
-    display:block; 
      -webkit-appearance: textfield;-moz-appearance: textfield;
     /* Solution 2 */
     /* min-width: 96%; */
