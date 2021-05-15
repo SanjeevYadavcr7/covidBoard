@@ -99,7 +99,7 @@ class main extends Component{
                             </div>
                         </div>
                         <div className="ChartComp">
-                            <CovidGraph />
+                            <CovidGraph country={country} />
                         </div>
                     </div>
                 </div>

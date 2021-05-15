@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import numeral from "numeral";
 import './Chart.css'
 
@@ -44,7 +44,7 @@ const options = {
             fontSize:10,
         },
         gridLines:{
-            display:false,
+            display:true,
             drawBorder:true,
         }
       },
@@ -71,7 +71,9 @@ const buildChartData = (data, casesType) => {
   let lastDataPoint;
   for (let date in data.cases) {
     if (lastDataPoint) {
-      let newDataPoint = {x: date,y: data[casesType][date],};
+      let newDataPoint = {x: date,y: data[casesType][date]-lastDataPoint,};
+      lastDataPoint = data[casesType][date];
+      // console.log("Date = "+date+", "+casesType+" = "+data[casesType][date]-lastDataPoint);
       chartData.push(newDataPoint);
     }
     lastDataPoint = data[casesType][date];
@@ -79,41 +81,58 @@ const buildChartData = (data, casesType) => {
   return chartData;
 };
 
-function Covidgraph({ casesType="cases" }) {
+function Covidgraph(props) {
   const [data, setData] = useState({});
   const [deaths, setDeaths] = useState({});
   const [recovered, setRecovered] = useState({});
+  let casesType="cases";
   let caseType2 = "deaths";
   let casesType3 = "recovered";
-
+  let selCountry = props.country;
+  // if(props.country = '')console.log("Country = Global");
+  // else console.log("Country = "+props.country)
   useEffect(() => {
     const fetchData = async () => {
-      await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=257")
+      let api = "https://disease.sh/v3/covid-19/historical/all?lastdays=50";
+      if(props.country != ''){
+        api = `https://disease.sh/v3/covid-19/historical/${props.country}?lastdays=50`;
+      }
+      await fetch(api)
         .then((response) => {
           return response.json();
         })
         .then((data) => {
-          let chartData = buildChartData(data, casesType);
-          let deathChartData = buildChartData(data, caseType2);
-          let recoverChartData = buildChartData(data, casesType3);
+          let chartData;
+          let deathChartData;
+          let recoverChartData;
+          if(props.country === ''){
+            chartData = buildChartData(data, casesType);
+            deathChartData = buildChartData(data, caseType2);
+            recoverChartData = buildChartData(data, casesType3);  
+          }
+          else{
+            chartData = buildChartData(data.timeline, casesType);
+            deathChartData = buildChartData(data.timeline, caseType2);
+            recoverChartData = buildChartData(data.timeline, casesType3);
+          }
           setData(chartData);
           setDeaths(deathChartData);
           setRecovered(recoverChartData);
         });
     };
     fetchData();
-  },[]);
+  },[selCountry]);
 
   return (
     <div className="ChartBox">
       <p className="small-text">Global Covid Status</p>
       {(data.length > 0 && deaths.length > 0 && recovered.length) && (
-        <Line
+        <Bar
           data={{
             datasets: [
               {
-                backgroundColor: "rgba(255, 42, 42, 0.17)",
-                borderColor: "#E74C3C",
+                backgroundColor: "rgba(146, 4, 255, 0.089)",
+                borderColor: "rgb(153, 66, 252)",
                 data: data,
                 label:'Confirmed',
                 fill:true,
@@ -121,8 +140,8 @@ function Covidgraph({ casesType="cases" }) {
                 radius:0,
               },
               {
-                backgroundColor: "#A9CCE3",
-                borderColor: "#5499C7",
+                backgroundColor: "#D1F2EB",
+                borderColor: "#1ABC9C",
                 data: deaths,
                 label:'Deaths',
                 fill:true,
@@ -130,8 +149,8 @@ function Covidgraph({ casesType="cases" }) {
                 radius:0,
               },
               {
-                backgroundColor: "rgba(146, 4, 255, 0.089)",
-                borderColor: "rgb(153, 66, 252)",
+                backgroundColor: "rgba(255, 42, 42, 0.17)",
+                borderColor: "#E74C3C",
                 data: recovered,
                 label:'Recovered',
                 borderWidth:2,
