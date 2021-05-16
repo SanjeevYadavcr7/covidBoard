@@ -16,7 +16,7 @@
 .numBox_num p{font-size: 0.9em;color: #666;
     font-weight:bold;letter-spacing: 0.03em;}
 .numBox_num .small-text{font-weight: 500;font-size: 0.9em;}
-.sec{background-color: rgba(255, 42, 42, 0.17);border:1px solid rgb(255, 70, 70);;}
+.sec{background-color: rgba(255, 42, 42, 0.17);border:1px solid rgb(255, 70, 70);}
 .numBox_icon .sec-text{color: rgb(255, 70, 70);}
 .third{background-color:rgba(146, 4, 255, 0.089);border:1px solid rgb(153, 66, 252);}
 .numBox_icon .third-text{color: rgb(153, 66, 252);}
@@ -113,10 +113,23 @@ padding-right:1em;padding-left: 1em;}
 .numBox1{border-color: rgb(153, 66, 252);background-color:rgba(146, 4, 255, 0.089);padding: 0;margin-top: 7%;}
 .numBox2{border-color: #09CF64;background-color:#09cf6515;}
 .numBox3{border-color: rgb(255, 70, 70);background-color:rgba(255, 42, 42, 0.17);}
-.p11{color:rgb(153, 66, 252);font-weight:500;margin: 0;margin-top:2%;margin-left:7%;line-height: 2em;}
-.p01{margin-right:16%;}
-.p12{color: rgb(153, 66, 252);font-size: 1.4em;font-weight: bold;}
-.p001{font-size: 0.9em;font-weight: bold;}
+.p11{color:rgb(153, 66, 252);font-weight:500;margin: 0;
+  /* margin-top:2%; */
+  /* margin-left:3%; */
+  margin:2% 2%;
+  line-height: 2em;
+  /* border: 1px solid; */
+}
+.p01{margin-right:16%;
+  /* border: 1px  solid; */
+}
+.p12{color: rgb(153, 66, 252);font-size: 1.4em;font-weight: bold;
+  /* border: 1px  solid; */
+}
+.p001{font-size: 0.9em;font-weight: bold;
+  margin-left:-4%;
+  /* border: 1px solid; */
+}
 .greenClass{color: #09CF64;}
 .redClass{color: rgb(255, 70, 70);}
 .numBox2 .p11 .p01{margin-right: 15%;}
