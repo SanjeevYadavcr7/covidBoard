@@ -57,7 +57,7 @@ border:1px solid transparent;text-align: right;}
 .box_m_info_2_r, .box_m_info_1_r{padding-left:0.5em;}
 
 .box_m_info_4_r .count, .box_m_info_3_r .count, .box_m_info_2_r .count, .box_m_info_1_r .count{
-    font-size: 1.1em;font-weight: 700;color: rgb(41, 98, 255);}
+    font-size: 1em;font-weight: 700;color: rgb(41, 98, 255);}
 .box_m_info_4_r .increment_count,.box_m_info_3_r .increment_count,.box_m_info_2_r .increment_count, .box_m_info_1_r .increment_count{font-size:0.8em;float: right;
     font-weight: bold;color: #444;margin-top: -10%;margin-right:5%;}
 .box_m_info_4_r .increment_count,.box_m_info_3_r .increment_count,.box_m_info_2_r .increment_count, .box_m_info_1_r .increment_count span{color: rgb(41, 98, 255);
