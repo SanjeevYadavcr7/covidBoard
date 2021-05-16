@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Line, Bar } from "react-chartjs-2";
 import numeral from "numeral";
-import './Chart.css'
+import './Chart.css';
+import { ToggleButton } from '../miniCompo/ToggleButton';
 
 const options = {
   legend: {
@@ -82,6 +83,10 @@ const buildChartData = (data, casesType) => {
 };
 
 function Covidgraph(props) {
+
+  const [selected, setSelected] = useState(false); // for toggle
+  const [chartType, setChartType] = useState('Bar');
+
   const [data, setData] = useState({});
   const [deaths, setDeaths] = useState({});
   const [recovered, setRecovered] = useState({});
@@ -123,47 +128,56 @@ function Covidgraph(props) {
     fetchData();
   },[selCountry]);
 
+  const chartRenderData = {
+    datasets: [
+      {
+        backgroundColor: "rgba(146, 4, 255, 0.089)",
+        borderColor: "rgb(153, 66, 252)",
+        data: data,
+        label:'Confirmed',
+        fill:true,
+        borderWidth:2,
+        radius:0,
+      },
+      {
+        backgroundColor: "#D1F2EB",
+        borderColor: "#1ABC9C",
+        data: deaths,
+        label:'Deaths',
+        fill:true,
+        borderWidth:2,
+        radius:0,
+      },
+      {
+        backgroundColor: "rgba(255, 42, 42, 0.17)",
+        borderColor: "#E74C3C",
+        data: recovered,
+        label:'Recovered',
+        borderWidth:2,
+        fill:true,
+        radius:0,
+      }
+    ]
+  }
+
   return (
     <div className="ChartBox">
-      <p className="small-text">Global Covid Status</p>
-      {(data.length > 0 && deaths.length > 0 && recovered.length) && (
-        <Bar
-          data={{
-            datasets: [
-              {
-                backgroundColor: "rgba(146, 4, 255, 0.089)",
-                borderColor: "rgb(153, 66, 252)",
-                data: data,
-                label:'Confirmed',
-                fill:true,
-                borderWidth:2,
-                radius:0,
-              },
-              {
-                backgroundColor: "#D1F2EB",
-                borderColor: "#1ABC9C",
-                data: deaths,
-                label:'Deaths',
-                fill:true,
-                borderWidth:2,
-                radius:0,
-              },
-              {
-                backgroundColor: "rgba(255, 42, 42, 0.17)",
-                borderColor: "#E74C3C",
-                data: recovered,
-                label:'Recovered',
-                borderWidth:2,
-                fill:true,
-                radius:0,
-              }
-            ],
-          }}
-          options={options}
-        />
+      <p className="small-text">
+        Global Covid Status
+        <ToggleButton selected={selected} toggleSelected={() => {setSelected(!selected)}} />
+      </p>
+      {(!selected) ? 
+        (data.length > 0 && deaths.length > 0 && recovered.length) && (
+          <Bar data={chartRenderData} options={options} />
+        )
+      :
+      (data.length > 0 && deaths.length > 0 && recovered.length) && (
+        <Line 
+          data={chartRenderData} options={options} />
       )}
     </div>
   );
 }
 
 export default Covidgraph;
+
