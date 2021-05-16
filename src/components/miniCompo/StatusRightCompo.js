@@ -6,9 +6,9 @@ function StatusRightCompo(props) {
     const {data, countryData} = props;
     const isFetching = false;
     const {active, recovered, deaths,todayCases,todayDeaths,todayRecovered} = data;
-    const x = todayCases/1000;
-    const y = todayRecovered/1000;
-    const z = todayDeaths/1000;
+    const x = parseInt(todayCases/1000)+(todayCases%100)/100;
+    const y = parseInt(todayRecovered/1000)+(todayRecovered%100)/100;
+    const z = parseInt(todayDeaths/1000)+(todayDeaths%100)/100;
 
     const [arrayData,setArrayData] = useState([]);
 
